@@ -1,21 +1,12 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"log"
-	"os"
 )
 
 func main() {
-	fmt.Print("이름 입력 : ")
-	r := bufio.NewReader(os.Stdin)
-	name, err := r.ReadString('\n') //err 대신 _를 쓰면 print에 err안써도 됨
-
-	if err != nil {
-		log.Fatal(err)
-	} else {
-		fmt.Println(name)
-	}
-
+	var float32 float32 = 9.1
+	fmt.Println(float32)
+	var number float32
+	fmt.Println(number)
 }
