@@ -7,18 +7,43 @@ import (
 
 func main() {
 	// var dates [3]time.Time
-	// dates[2] = time.Unix(1708012345, 0)
 	// dates[0] = time.Unix(0, 0)
-	// fmt.Println(dates[0], dates[1], dates[2]) // Unix time, zero value, 2024-315
+	// dates[2] = time.Unix(1708012346, 0)
+	// fmt.Println(dates[0], dates[1], dates[2]) // 1970-01-01 00:00:00, zero value, 2024-02-16 ...
 
-	// 배열 리터럴
-	// fmt.Println(dates[0], dates[1], dates[3])
+	// var dates [3]time.Time = [3]time.Time{time.Unix(0, 0), time.Unix(1, 0), time.Unix(1708012346, 0)}
+	// fmt.Println(dates[0], dates[1], dates[2]) // 1970-01-01 00:00:00, +1, 2024-02-16 ...
+
+	// dates := [3]time.Time{time.Unix(0, 0), time.Unix(1, 0), time.Unix(1708012346, 0)}
+	// fmt.Println(dates[0], dates[1], dates[2]) // 1970-01-01 00:00:00, +1, 2024-02-16 ...
+
+	// dates := [3]time.Time{
+	// 	time.Unix(0, 0),
+	// 	time.Unix(1, 0),
+	// 	time.Unix(1708012346, 0), // need comma
+	// }
+	// fmt.Println(dates[0], dates[1], dates[2])
 
 	dates := [3]time.Time{
 		time.Unix(0, 0),
 		time.Unix(1, 0),
-		time.Unix(1708012345, 0)}
-	fmt.Println(dates[0], dates[1], dates[2])
-	fmt.Println(dates)        //array
-	fmt.Printf("%v\n", dates) //array literal
+		time.Unix(1708012346, 0)}
+	// fmt.Println(dates[0], dates[1], dates[2])
+	// fmt.Println(dates)         // array
+	// fmt.Printf("%#v\n", dates) // array literal
+
+	// for i := 0; i <= 2; i++ {
+	// 	fmt.Println(i, dates[i])
+	// }
+
+	// for i := 0; i < len(dats); i++ {
+	// 	fmt.Println(i, dates[i])
+	// }
+
+	// for _, date := range dates {  //like python for in, SAFE!
+	// 	fmt.Println(date)
+	// }
+	for i, date := range dates {
+		fmt.Println(i, date)
+	}
 }
